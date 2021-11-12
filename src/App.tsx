@@ -1,7 +1,7 @@
-import React from 'react';
-import ToDoListItem from './ToDoListItem';
+import React, { useState } from 'react';
+import TodoListItem from './TodoListItem';
 
-const todos: ToDo[] = [
+const initialTodos: Todo[] = [
   {
     text: 'Walk the dog',
     complete: false,
@@ -13,10 +13,25 @@ const todos: ToDo[] = [
 ];
 
 function App() {
+  const [todos, setTodos] = useState(initialTodos);
+
+  const toggleTodo = (selectedTodo: Todo) => {
+    const newTodos = todos.map(todo => {
+      if (todo === selectedTodo) {
+        return {
+          ...todo, 
+          complete: !todo.complete,
+        };
+      }
+      return todo;
+    });
+    setTodos(newTodos);    
+  };
+
   return (
     <ul>
-      <ToDoListItem todo={todos[0]} />
-      <ToDoListItem todo={todos[1]} />
+      <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
+      <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
     </ul>
   );
 }

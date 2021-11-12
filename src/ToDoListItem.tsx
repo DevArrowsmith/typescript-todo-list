@@ -1,20 +1,27 @@
 import React from 'react';
 
 interface Props {
-    todo: ToDo;
+    todo: Todo;
+    toggleTodo: ToggleTodo;
 }
 
-const ToDoListItem: React.FC<Props> = ({ todo }) => {
+const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
     return (
         <li>
             <label
                 style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
             >
-                <input type="checkbox" checked={todo.complete} />
+                <input 
+                    type="checkbox"
+                    checked={todo.complete}
+                    onClick={() => {
+                        toggleTodo(todo)
+                    }}
+                />{' '}
                 {todo.text}
             </label>
         </li>
     )
 };
 
-export default ToDoListItem;
+export default TodoListItem;
