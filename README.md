@@ -1,7 +1,11 @@
-# Typescript To-Do List
+# Typescript To-Do List ☑️
 
 ## Introduction
 
-In this project I'll create a to-do list application using Typescript in React.
+This project is an introduction to Typescript. I'm dipping my toe in the water! 🌊🦶
 
-[I'm following this tutorial.](https://typeofnan.dev/your-first-react-typescript-project-todo-app/)
+## Aims
+
+- Follow [this tutorial](https://typeofnan.dev/your-first-react-typescript-project-todo-app/) to produce a simple to-do list application
+- Look up unfamiliar syntax and concepts
+- Start to form a mental model of typescript
