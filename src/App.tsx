@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
 import initialTodos from './initialTodos';
+import "./styles/App.css";
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />;
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
       <AddTodoForm addTodo={addTodo} />
     </>
   );
